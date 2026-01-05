@@ -19,7 +19,7 @@ exercises = {
         {"name": "Австралийские подтягивания", "link": "https://t.me/trraningg/21"},
         {"name": "Тяга Горизонтального блока", "link": "https://t.me/trraningg/24"},
         {"name": "Пуловер в кроссовере", "link": "https://t.me/trraningg/25"},
-        {"name": "Гиперэкстензия", "link": "https://t.me/trraningg/13"},
+        {"name": "Гиперэкстензия", "link": "https://t.me/trraningg/52"},
         {"name": "Тяга гантели одной рукой", "link": "https://t.me/trraningg/47"},
         {"name": "Классические подтягивания", "link": "https://t.me/trraningg/55"},
         {"name": "Тяга штанги в наклоне", "link": "https://t.me/trraningg/62"}
@@ -28,8 +28,8 @@ exercises = {
         {"name": "Жим лежа на горизонтальной скамье", "link": "https://t.me/trraningg/8"},
         {"name": "Сведение рук в Пек-деке", "link": "https://t.me/trraningg/36"},
         {"name": "Жим штанги на наклонной скамье", "link": "https://t.me/trraningg/34"},
-        {"name": "Разведение гантелей на наклонной скамье", "link": "https://t.me/trraningg/33"},
-        {"name": "Жим гантелей на наклонной скамье", "link": "https://t.me/trraningg/29"},
+        {"name": "Разведение гантелей на наклонной скамье", "link": "https://t.me/trraningg/53"},
+        {"name": "Жим гантелей на наклонной скамье", "link": "https://t.me/trraningg/54"},
         {"name": "Отжимания от смита", "link": "https://t.me/trraningg/20"},
         {"name": "Отжимания на брусьях", "link": "https://t.me/trraningg/17"},
         {"name": "Отжимания классические", "link": "https://t.me/trraningg/49"}
@@ -128,12 +128,16 @@ async def callback_handler(callback: CallbackQuery):
     if data.startswith("group_"):
         group = data[6:]
         if exercises.get(group):
-            keyboard = InlineKeyboardMarkup(
-                inline_keyboard=[
-                    [InlineKeyboardButton(text=ex["name"], url=ex["link"])]
-                    for ex in exercises[group]
-                ] + [[InlineKeyboardButton(text="⬅ Главное меню", callback_data="back")]]
-            )
+            buttons = []
+            for i, ex in enumerate(exercises[group]):
+                link = ex.get("link")
+                if link:
+                    buttons.append([InlineKeyboardButton(text=ex["name"], url=link)])
+                else:
+                    buttons.append([InlineKeyboardButton(text=ex["name"], callback_data=f"no_link_{group}_{i}")])
+
+            buttons.append([InlineKeyboardButton(text="⬅ Главное меню", callback_data="back")])
+            keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
             await callback.message.answer(f"Выберите упражнение для {group}:", reply_markup=keyboard)
         else:
             await callback.message.answer(f"Упражнения для {group} пока не добавлены 😎")
@@ -141,6 +145,10 @@ async def callback_handler(callback: CallbackQuery):
 
     if data == "back":
         await callback.message.answer("Главное меню:", reply_markup=main_menu())
+
+    if data.startswith("no_link_"):
+        await callback.message.answer("Ссылка на это упражнение пока не добавлена 😅")
+        return
 
 # ====== Запуск бота ======
 async def main():
@@ -155,3 +163,4 @@ if __name__ == "__main__":
         raise SystemExit(1)
     except KeyboardInterrupt:
         print("Бот остановлен вручную.")
+
