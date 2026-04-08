@@ -14,36 +14,36 @@ dp = Dispatcher()
 # ====== Словарь с упражнениями ======
 exercises = {
     "Спина": [
-        {"name": "Тяга вертикального блока", "link": "https://t.me/trraningg/23"},
-        {"name": "Подтягивания в гравитроне", "link": "https://t.me/trraningg/16"},
+        {"name": "Тяга вертикального блока", "link": "https://t.me/trraningg/65"},
+        {"name": "Подтягивания в гравитроне", "link": "https://t.me/trraningg/76"},
         {"name": "Австралийские подтягивания", "link": "https://t.me/trraningg/21"},
         {"name": "Тяга Горизонтального блока", "link": "https://t.me/trraningg/24"},
-        {"name": "Пуловер в кроссовере", "link": "https://t.me/trraningg/25"},
+        {"name": "Пуловер в кроссовере", "link": "https://t.me/trraningg/66"},
         {"name": "Гиперэкстензия", "link": "https://t.me/trraningg/52"},
         {"name": "Тяга гантели одной рукой", "link": "https://t.me/trraningg/47"},
         {"name": "Классические подтягивания", "link": "https://t.me/trraningg/55"},
         {"name": "Тяга штанги в наклоне", "link": "https://t.me/trraningg/62"}
     ],
     "Грудь": [
-        {"name": "Жим лежа на горизонтальной скамье", "link": "https://t.me/trraningg/8"},
-        {"name": "Сведение рук в Пек-деке", "link": "https://t.me/trraningg/36"},
+        {"name": "Жим лежа на горизонтальной скамье", "link": "https://t.me/trraningg/71"},
+        {"name": "Сведение рук в Пек-деке", "link": "https://t.me/trraningg/67"},
         {"name": "Жим штанги на наклонной скамье", "link": "https://t.me/trraningg/34"},
         {"name": "Разведение гантелей на наклонной скамье", "link": "https://t.me/trraningg/53"},
         {"name": "Жим гантелей на наклонной скамье", "link": "https://t.me/trraningg/54"},
         {"name": "Отжимания от смита", "link": "https://t.me/trraningg/20"},
-        {"name": "Отжимания на брусьях", "link": "https://t.me/trraningg/17"},
+        {"name": "Отжимания на брусьях", "link": "https://t.me/trraningg/77"},
         {"name": "Отжимания классические", "link": "https://t.me/trraningg/49"}
     ],
     "Ноги": [
         {"name": "Выпады по залу", "link": "https://t.me/trraningg/45"},
         {"name": "Приседания плие", "link": "https://t.me/trraningg/41"},
         {"name": "Приседания в Смите", "link": "https://t.me/trraningg/30"},
-        {"name": "Выпады с прямым корпусом", "link": "https://t.me/trraningg/14"},
-        {"name": "Жим ногами узкой постановкой ног", "link": "https://t.me/trraningg/12"},
-        {"name": "Сведение ног в тренажере сидя", "link": "https://t.me/trraningg/11"},
-        {"name": "Разгибание ног сидя", "link": "https://t.me/trraningg/7"},
-        {"name": "Сгибание ног сидя", "link": "https://t.me/trraningg/6"},
-        {"name": "Жим платформы ногами средней постановкой ног", "link": "https://t.me/trraningg/4"}
+        {"name": "Выпады с прямым корпусом", "link": "https://t.me/trraningg/75"},
+        {"name": "Жим ногами узкой постановкой ног", "link": "https://t.me/trraningg/74"},
+        {"name": "Сведение ног в тренажере сидя", "link": "https://t.me/trraningg/73"},
+        {"name": "Разгибание ног сидя", "link": "https://t.me/trraningg/70"},
+        {"name": "Сгибание ног сидя", "link": "https://t.me/trraningg/69"},
+        {"name": "Жим платформы ногами средней постановкой ног", "link": "https://t.me/trraningg/68"}
     ],
     "Ягодицы": [
         {"name": "Ягодичный мостик со штангой", "link": "https://t.me/trraningg/46"},
@@ -57,10 +57,12 @@ exercises = {
         {"name": "Махи гантелей сидя", "link": "https://t.me/trraningg/50"},
         {"name": "Жим гантелей на плечи", "link": "https://t.me/trraningg/57"},
         {"name": "Жим штанги на плечи", "link": "https://t.me/trraningg/56"},
+        {"name": "Разведение рук в стороны в пэк деке", "link": "https://t.me/trraningg/68"},
+
         
     ],
     "Руки": [
-        {"name": "Сгибание рук со штангой EZ", "link": "https://t.me/trraningg/10"},
+        {"name": "Сгибание рук со штангой EZ", "link": "https://t.me/trraningg/72"},
         {"name": "Сгибание рук с гантелями", "link": "https://t.me/trraningg/37"},
         {"name": "Сгибание рук нейтральным хватом", "link": "https://t.me/trraningg/63"},
         {"name": "Сгибание рук в блоке с прямой рукояткой", "link": "https://t.me/trraningg/58"},
